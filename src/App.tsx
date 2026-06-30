@@ -4,7 +4,6 @@ import SearchBar from "./components/SearchBar";
 import Loading from "./components/Loading";
 import ErrorMessage from "./components/ErrorMessage";
 import {fetchWeather} from "./services/weatherApi";
-
 function App() {
   const [city,setCity]=useState("");
   const [weather,setWeather]=useState(null);
@@ -38,12 +37,9 @@ function App() {
     setCity(e.target.value);
   }
 return(
-  <div>
+  <div className="">
   <h1>Weather App</h1>
   <p>Get Real Time Weather Information for any city</p>
-  <div className="bg-blue-500 text-white p-4">
-  Hello
-</div>
   
   <SearchBar  city={city} handleCityChange={handleCityChange} getWeather={getWeather}/>
   {loading && <Loading/>}
